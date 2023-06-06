@@ -45,9 +45,6 @@ require 'pages/navbar/navbar.php';
 									<div class="form-group">
 										<label>Tanggal Order</label>
 										<input type="date" class="form-control" name="tgl_order" required="required">
-
-										<label>Jumlah Penumpang</label>
-										<input type="text" class="form-control" name="jml_penumpang" placeholder="masukkan jumlah penumpang" required="required">
 									</div>
 								</div>
 							</div>
