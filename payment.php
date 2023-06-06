@@ -4,12 +4,6 @@ require 'pages/templates/header.php';
 require 'pages/navbar/navbar.php';
 
 $_id = $_GET['id'];
-// $_payment_code = $_GET['kode_transaksi'];
-
-// $sql2 = "SELECT id_order FROM transaksi WHERE $_id = id";
-// $result2 = mysqli_query($conn, $sql2);
-// $data2 = $result2->fetch_array();
-// $id_order = $data2['id_order'];
 
 $sql = "SELECT tiket.*, jadwal.*, transaksi.* 
 		FROM tiket, jadwal, transaksi
@@ -32,12 +26,6 @@ $result3 = mysqli_query($conn, $sql3);
 $data2 = $result3->fetch_array();
 $status_transaksi = $data2['status_transaksi'];
 
-// function
-
-// if ($=== true) {
-// 	header("location:delete_process.php?id=$_id");
-// }
-
 // munculin harga
 while ($row = mysqli_fetch_array($result)) {
 	$nama = $row['nama'];
@@ -45,8 +33,7 @@ while ($row = mysqli_fetch_array($result)) {
 	$tujuan_rute = $row['tujuan_rute'];
 	$tgl_berangkat = $row['tgl_berangkat'];
 	$harga = $row['harga'];
-	$penumpang = $row['jml_penumpang'];
-	$total_harga = $harga * $penumpang;
+	$total_harga = $harga;
 
 ?>
 
@@ -88,10 +75,6 @@ while ($row = mysqli_fetch_array($result)) {
 										<td><?= $row['harga'] ?></td>
 									</tr>
 									<tr>
-										<th scope="row">Jumlah Penumpang</th>
-										<td><?= $row['jml_penumpang']; ?></td>
-									</tr>
-									<tr>
 										<th scope="row">Status Transaksi</th>
 										<td><?= $status_transaksi; ?></td>
 									</tr>
@@ -105,9 +88,6 @@ while ($row = mysqli_fetch_array($result)) {
 									</tr>
 								</tbody>
 							</table>
-							<!-- <form action="delete_process.php" method="POST">
-								<button type="submit" name="delete_button" class="btn btn-primary">Selesaikan Pesanan</button>
-							</form> -->
 							<br />
 							<button onclick="window.print()" class="btn btn-primary">Cetak Tiket</button>
 						</div>
