@@ -15,6 +15,6 @@ $result = mysqli_query($conn,$sql);
 if ($result) {
 	header("Location: login.php");
 }else{
-	header("Location: registration.php");
+	header("Location: register.php");
 	echo "error : ".$sql;
 }
