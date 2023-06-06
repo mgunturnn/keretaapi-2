@@ -37,8 +37,8 @@
 				$i = 1;
 				while($row = mysqli_fetch_array($result)){
 					$harga = $row['harga'];
-					$penumpang = $row['jml_penumpang'];
-					$total_harga = $harga * $penumpang;
+					
+					$total_harga = $harga;
 					$paid = $row['paid'];
 					$pacod = $row['pacod'];
 					
