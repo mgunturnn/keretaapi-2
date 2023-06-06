@@ -23,13 +23,11 @@ if (isset($_POST['btn-order'])) {
 	$data = $result4->fetch_array();
 	$tanggal = $data['tanggal'];
 
-	// echo "<script type='text/javascript'>alert('$jadwal $nama $no_hp $kategori_penumpang $tgl_order $jml_penumpang $id_user $id_jadwal');</script>";
-
 	// order
 	$sql = " INSERT INTO `order` (nama, no_hp, kategori_penumpang, tgl_order, jml_penumpang, id_user, id_jadwal ) VALUES ('$nama', '$no_hp', '$kategori_penumpang', '$tgl_order', '$jml_penumpang', '$id_user', '$id_jadwal' )";
 	$result = mysqli_query($conn, $sql);
 	$id_order = $conn->insert_id;
-	// tiket (adding durasi)
+	// tiket
 	$sql2 = "INSERT INTO tiket (nama, no_hp, kategori_penumpang, tgl_berangkat, jml_penumpang, id_user, id_jadwal ) VALUES ('$nama', '$no_hp', '$kategori_penumpang', '$tanggal', '$jml_penumpang', '$id_user', '$id_jadwal')";
 	$result2 = mysqli_query($conn, $sql2);
 	// transaksi 
