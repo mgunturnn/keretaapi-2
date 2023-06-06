@@ -100,8 +100,6 @@ if (isset($_POST['cari'])) {
 </div>
 
 
-?>
-
 
 
 
